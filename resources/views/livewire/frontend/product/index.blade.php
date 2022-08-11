@@ -15,7 +15,7 @@
                                 <h3>Product portfolio</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <button class="list-group-item list-group-item-action" >Gaming laptop</button>
+                                <button class="list-group-item list-group-item-action">Gaming laptop</button>
                                 <button class="list-group-item list-group-item-action">Office laptop</button>
                                 <button class="list-group-item list-group-item-action">Gaming - Graphics PC</button>
                                 <button class="list-group-item list-group-item-action">PC Components</button>
@@ -28,18 +28,25 @@
                                 <button class="list-group-item list-group-item-action">Console</button>
                             </div>
                         </div>
-                        <div class="filter-price-left">
+
+                        <div class="filter-left">
                             <div class="title-left">
                                 <h3>Price</h3>
                             </div>
-                            <div class="price-box-slider">
-                                <div id="slider-range">
+                            
+                            <div class="brand-box" style="height: 72px;">
+                                <ul>    
+                                    <label class="d-block">
+                                        <input type="radio" name="priceSort" wire:model="priceInput" value="high-to-low">
+                                        <span style="margin-left: 5px">High to low</span>
+                                    </label>
 
-                                </div>
-                                <p>
-                                    <input type="text" id="amount" readonly style="border:0; color:#fbb714; font-weight:bold;">
-                                    <button class="btn hvr-hover" type="submit">Filter</button>
-                                </p>
+                                    <label class="d-block">
+                                        <input type="radio" name="priceSort" wire:model="priceInput" value="low-to-high">
+                                        <span style="margin-left: 5px">Low to high</span>
+                                    </label>
+
+                                </ul>
                             </div>
                         </div>
                         <div class="filter-brand-left">
@@ -50,11 +57,9 @@
                                 <ul>
                                         @foreach ($category->brands as $brandItem)
                                             <label class="d-block">
-                                                <input type="checkbox" wire:model="brandInputs" value="{{  $brandItem->name }}"><span style="margin-left: 5px">{{ $brandItem->name }}</span></label>
+                                                <input type="checkbox" wire:model="brandInputs" value="{{  $brandItem->name }}"><span style="margin-left: 5px">{{ $brandItem->name }}</span>
+                                            </label>
                                         @endforeach
-                              
-                         
-                                    
                                 </ul>
                             </div>
                         </div>
@@ -64,19 +69,13 @@
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
                     <div class="right-product-box">
                         <div class="product-item-filter row">
+
                             <div class="col-12 col-sm-8 text-center text-sm-left">
                                 <div class="toolbar-sorter-right">
-                                    <span>Sort by </span>
-                                    <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-									<option data-display="Select">Nothing</option>
-									<option value="1">Popularity</option>
-									<option value="2">High Price → High Price</option>
-									<option value="3">Low Price → High Price</option>
-									<option value="4">Best Selling</option>
-								</select>
+                                    <span> </span>
                                 </div>
-
                             </div>
+
                             <div class="col-12 col-sm-4 text-center text-sm-right">
                                 <ul class="nav nav-tabs ml-auto">
                                     <li>
@@ -112,11 +111,10 @@
                                                     
                                                     <div class="card-body">
                                                         <h4>
-                                                            
                                                             <a href="{{ url('/collections/'.$productItem->category->name.'/'.$productItem->title) }}">
-                                                                Name:    {{ $productItem->title }}    
+                                                                {{ $productItem->title }}    
                                                             </a></h4>
-                                                        <h5>Prices:{{ $productItem->price}}</h5>
+                                                        <h5 style="color: red; font-size: 20px">{{ $productItem->price}} ₫</h5>
                                                         <a class="cart btn btn-danger btn-block" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>

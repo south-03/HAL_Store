@@ -118,6 +118,10 @@
                                     </a>
     
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" style="color: black; margin: 5px 0px" href="{{ url('/home') }}">Home
+                                        </a>
+                                           
+                                        
                                         <a class="dropdown-item" style="color: black" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
