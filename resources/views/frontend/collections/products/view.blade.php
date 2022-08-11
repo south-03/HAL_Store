@@ -283,6 +283,28 @@
     <script src="{{asset('../libs/js/contact-form-script.js')}}"></script>
     <script src="{{url('https://kit.fontawesome.com/e275822d82.js')}}" crossorigin="anonymous"></script>
     <script src="{{asset('../libs/js/custom.js')}}"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.addtoCartBtn').click(function(e) {
+                e.preventDefault();
+
+                var product_id = $(this).closest('.product_data').find('.pro_id').val();
+                var product_qty = $(this).closest('.product_data').find('.qty-input').val();
+
+                $.ajax({
+                    method: "POST",
+                    url: "/add-to-cart",
+                    data:{
+                        "product_id": product_id,
+                        "product_qty" :product_qty,
+                    },
+                    success: function (response) {
+                        }
+                });
+            });
+        })
+    </script>
 </body>
 
 </html>
