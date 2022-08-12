@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
                     <div class="product-categori">
-                        <div class="search-product">
+                        <div class="search-product"></div>
                             <form action="#">
                                 <input class="form-control" placeholder="Search here..." type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
@@ -37,15 +37,14 @@
                             <div class="brand-box" style="height: 72px;">
                                 <ul>    
                                     <label class="d-block">
-                                        <input type="radio" name="priceSort" wire:model="priceInput" value="high-to-low">
+                                        <input class="sort-h-t-l" type="radio" name="priceSort" onclick="location.href='?price=high-to-low'" wire:model="priceInput" value="high-to-low">
                                         <span style="margin-left: 5px">High to low</span>
                                     </label>
 
                                     <label class="d-block">
-                                        <input type="radio" name="priceSort" wire:model="priceInput" value="low-to-high">
+                                        <input type="radio" name="priceSort" onclick="location.href='?price=low-to-high'" wire:model="priceInput" value="low-to-high">
                                         <span style="margin-left: 5px">Low to high</span>
                                     </label>
-
                                 </ul>
                             </div>
                         </div>
@@ -55,15 +54,14 @@
                             </div>
                             <div class="brand-box">
                                 <ul>
-                                        @foreach ($category->brands as $brandItem)
-                                            <label class="d-block">
-                                                <input type="checkbox" wire:model="brandInputs" value="{{  $brandItem->name }}"><span style="margin-left: 5px">{{ $brandItem->name }}</span>
-                                            </label>
-                                        @endforeach
+                                    @foreach ($category->brands as $brandItem)
+                                        <label class="d-block">
+                                            <input type="checkbox" wire:model="brandInputs" value="{{  $brandItem->name }}"><span style="margin-left: 5px">{{ $brandItem->name }}</span>
+                                        </label>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right">
@@ -126,7 +124,6 @@
                                                 </div>
                                             </div>
                                         @endforelse
-                                    
                                     </div>
                                 </div>
                             </div>

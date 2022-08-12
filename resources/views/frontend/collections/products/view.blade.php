@@ -5,6 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -283,6 +284,8 @@
     <script src="{{asset('../libs/js/contact-form-script.js')}}"></script>
     <script src="{{url('https://kit.fontawesome.com/e275822d82.js')}}" crossorigin="anonymous"></script>
     <script src="{{asset('../libs/js/custom.js')}}"></script>
+    <script src="{{ url('https://code.jquery.com/jquery-3.6.0.min.js') }}"></script>
+
 
     <script>
         $(document).ready(function(){
@@ -292,6 +295,12 @@
                 var product_id = $(this).closest('.product_data').find('.pro_id').val();
                 var product_qty = $(this).closest('.product_data').find('.qty-input').val();
 
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"] ').attr('content')
+                    }
+                });     
+
                 $.ajax({
                     method: "POST",
                     url: "/add-to-cart",
@@ -300,10 +309,11 @@
                         "product_qty" :product_qty,
                     },
                     success: function (response) {
-                        }
+                        swal(response.status);
+                    }
                 });
             });
-        })
+        });
     </script>
 </body>
 

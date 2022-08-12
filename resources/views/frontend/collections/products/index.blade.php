@@ -304,6 +304,15 @@
     <script src="{{asset('../libs/js/contact-form-script.js')}}"></script>
     <script src="{{url('https://kit.fontawesome.com/e275822d82.js')}}" crossorigin="anonymous"></script>
     <script src="{{asset('../libs/js/custom.js')}}"></script>
+    <script src="{{ url('https://code.jquery.com/jquery-3.6.0.min.js') }}"></script>
+
+    <script>
+        element.addEventListener("sort-h-t-l", sort);
+        
+        function sort() {
+            alert ("Check");
+        }
+    </script>
 </body>
 
 </html>

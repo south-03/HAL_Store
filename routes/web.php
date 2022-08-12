@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\Frontend\CartController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +36,6 @@ Route::get('/service', function () {
 Route::get('/contactUs', function () {
     return view('contactUs');
 });
-
-
-
-
 
 Auth::routes();
 
@@ -81,3 +78,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function ()
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth'])->group(function (){
+    Route::post('add-to-cart', [App\Http\Controllers\Frontend\CartController::class, 'addProduct']);
+});

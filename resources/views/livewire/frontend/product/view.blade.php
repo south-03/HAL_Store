@@ -7,7 +7,6 @@
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active">
                                 @if ($product->productImage)
-                                    
                                 <img class="d-block w-100" src="{{ asset($product->productImage[0]->thumbnail) }}" alt="First slide"> </div>
                                 @endif 
                             <div class="carousel-item"> <img class="d-block w-100" src="images/big-img-02.jpg" alt="Second slide"> </div>
@@ -26,25 +25,22 @@
                                         <div class="form-control quantity-box mb-5">
                                             <input type="hidden" value="{{ $product->id }}" class="pro_id">
                                             <label class="control-label">Quantity</label>
-                                            <input class="form-control qty-input" value="0" min="0" max="100" type="number">
+                                            <input class="form-control qty-input" value="1" min="0" max="100" type="number">
                                         </div>
 
                                 <div class="price-box-bar">
                                     <div class="cart-and-bay-btn">
                                         {{-- <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a> --}}
-                                        <a class="btn hvr-hover addtoCartBtn" data-fancybox-close="" href="#">Add to cart</a>
-                                            <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                                            <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
-                                            <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                                            <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
-                                            <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover addtoCartBtn" >Add to cart</a>
+                                        <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a>
+                                        <a class="btn hvr-hover float-end" style="margin: 0px 3px" href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                                     </div>
-                                    <div class="add-to-btn cart-and-bay-btn">
-                                        <div class="share-bar">
-                                            
-                                        </div>
-                                    </div>
-                                </div>   
+                                </div>  
+                            </p>   
+                        </p>   
                     </div>
                 </div>
             </div>
