@@ -212,7 +212,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Shop</h2>
-                    <ul class="breadcrumb" style="padding: 13px">
+                    <ul class="breadcrumb" style="padding: 13px;">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active"></li>
 
