@@ -52,7 +52,7 @@
                                 <ul>
                                         @foreach ($category->brands as $brandItem)
                                             <label class="d-block">
-                                                <input type="checkbox" wire:model="brandInputs" value="{{  $brandItem->name }}"><span style="margin-left: 5px" onClick="location.href='?brandInputs[{{ $brandItem->id }}]={{ $brandItem->name }}'">{{ $brandItem->name }}</span></label>
+                                                <input type="checkbox" wire:model="brandInputs" value="{{  $brandItem->name }}"><span style="margin-left: 5px">{{ $brandItem->name }}</span></label>
                                         @endforeach
 
                                 </ul>
