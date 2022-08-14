@@ -228,6 +228,7 @@
 
     <!-- Start Shop Page  -->
         <livewire:frontend.product.index :category="$category"/>
+        
     <!-- End Shop Page -->
 
     
@@ -330,8 +331,9 @@
             });
         }
         
+        
+    </script>
 
-        </script>
 </body>
 
 </html>

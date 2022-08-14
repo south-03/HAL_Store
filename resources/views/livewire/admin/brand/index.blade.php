@@ -23,7 +23,6 @@
                             @forelse ( $brands as $brand )
                             <tr>
                                 <td>{{ $brand->name }}</td>
-                                <td>{{ $brand->origin }}</td>
                                 <td>
                                     <a href="#" wire:click="editBrand({{ $brand->id }})" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#updateBrandModal">Edit</a>
                                     <a href="#" wire:click="deleteBrand({{ $brand->id }})" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteBrandModal">Delete</a>

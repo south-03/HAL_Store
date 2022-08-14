@@ -7,7 +7,7 @@
                         <div class="search-product">
                             <form action="{{ url('searchproduct') }}" method="POST">
                                 @csrf
-                                <input class="form-control" id="search-product" placeholder="Search here..." type="text">
+                                <input class="form-control" id="search-product" name="product_name" placeholder="Search here..." type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
                         </div>
@@ -33,14 +33,15 @@
                             <div class="title-left">
                                 <h3>Price</h3>
                             </div>
-                            <div class="price-box-slider">
-                                <div id="slider-range">
-
-                                </div>
-                                <p>
-                                    <input type="text" id="amount" readonly style="border:0; color:#fbb714; font-weight:bold;">
-                                    <button class="btn hvr-hover" type="submit">Filter</button>
-                                </p>
+                            <div class="price-box-slider" >
+                                <label class="d-block">
+                                    <input type="radio" name="priceSort" wire:model="priceInput" value="high-to-low" onClick="location.href='?price=high-to-low'">
+                                    <span style="margin-left: 2px">High to Low</span> 
+                                </label>
+                                <label class="d-block">
+                                    <input type="radio" name="priceSort" wire:model="priceInput" value="low-to-high" onClick="location.href='?price=low-to-high'">
+                                    <span style="margin-left: 2px;">Low to High</span>
+                                </label>
                             </div>
                         </div>
                         <div class="filter-brand-left">
@@ -51,11 +52,9 @@
                                 <ul>
                                         @foreach ($category->brands as $brandItem)
                                             <label class="d-block">
-                                                <input type="checkbox" wire:model="brandInputs" value="{{  $brandItem->name }}"><span style="margin-left: 5px">{{ $brandItem->name }}</span></label>
+                                                <input type="checkbox" wire:model="brandInputs" value="{{  $brandItem->name }}"><span style="margin-left: 5px" onClick="location.href='?brandInputs[{{ $brandItem->id }}]={{ $brandItem->name }}'">{{ $brandItem->name }}</span></label>
                                         @endforeach
-                              
-                         
-                                    
+
                                 </ul>
                             </div>
                         </div>
@@ -96,11 +95,11 @@
 
                                         @forelse ($products as $productItem)
                                         
-                                            <div class="col-sm-6 col-md-6 col-lg-4 border border-primary ml-5" style="    margin: 0px 20px 0px 0px;">
+                                            <div class="col-sm ml-5" style="    margin: 0px 20px 0px 0px;">
                                                 @if ($productItem->quantity > 0)
                                                     <label class="stock bg-success rounded" style="font-size: 20px; color: white; padding: 0px 5px; margin-top: 5px">In stock</label>
                                                 @else
-                                                    <label class="stock bg-danger rounded" style="font-size: 20px; color: white; padding: 2px 5px;">Out of stock</label>
+                                                    <label class="stock bg-danger rounded" style="font-size: 20px; color: white; padding: 2px 5px; margin-top: 5px">Out of stock</label>
                                                 @endif
                                                 <div class="products-single ">
                                                     
@@ -117,8 +116,8 @@
                                                             <a href="{{ url('/collections/'.$productItem->category->name.'/'.$productItem->title) }}">
                                                                 {{ $productItem->title }}    
                                                             </a></h4>
-                                                        <h5>{{ $productItem->price}}</h5>
-                                                        <a class="cart btn btn-danger btn-block" href="#">Add to Cart</a>
+                                                        <h5 style="font-size: 18px; color: red">{{ $productItem->price}} ₫</h5>
+                                                        <a class="btn btn-danger addToCartBtn" value="{{ $productItem->id}}" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -129,8 +128,9 @@
                                                 </div>
                                             </div>
                                         @endforelse
-                                    
+                                        
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>

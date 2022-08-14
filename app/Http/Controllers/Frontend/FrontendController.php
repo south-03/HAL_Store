@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
+
 
 class FrontendController extends Controller
 {
+    
     public function index()
     {
         return view('frontend.index');
@@ -61,6 +64,23 @@ class FrontendController extends Controller
 
     public function searchproduct(Request $request)
     {
-        
+        $searched_product = $request->product_name;
+
+        if($searched_product !="") {
+            $product = Product::where("title", "LIKE", "%$searched_product%")->first();
+            if($product) {
+                return redirect('collections/'. $product->category->name.'/'.$product->title);
+            } else {
+                return redirect()->back()->with("status", "No product matched");
+            }
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function pagination()
+    {
+        $data = Product::paginate(2);
+        return view('frontend.collections.products.view', ['products' => $data]);
     }
 }

@@ -37,12 +37,12 @@
 
                         <div class="mb-3">
                             <label>Price</label>
-                            <input type="number" name="price" class="form-control">
+                            <input type="number" name="price" class="form-control" min="0">
                         </div>
 
                         <div class="mb-3">
                             <label>Quantity</label>
-                            <input type="number" name="quantity" class="form-control">
+                            <input type="number" name="quantity" class="form-control" min="-1">
                         </div>
 
                         <div class="mb-3">

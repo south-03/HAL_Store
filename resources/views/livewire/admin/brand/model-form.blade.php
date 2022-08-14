@@ -12,16 +12,8 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label>Brand Name</label>
-                            <input type="text" wire:model.defer="name" class="form-control">
+                            <input type="text" wire:model.defer="name" class="form-control" pattern="[a-z]">
                             @error('name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
-                            <label>Brand Origin</label>
-                            <input type="text" wire:model.defer="origin" class="form-control">
-                            @error('origin')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>

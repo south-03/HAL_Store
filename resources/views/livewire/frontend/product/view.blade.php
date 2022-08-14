@@ -31,7 +31,6 @@
                            
                                 <div class="price-box-bar" style="margin-top: 5px">
                                     <div class="cart-and-bay-btn">
-                                        <a class="btn hvr-hover " data-fancybox-close="" href="#">Buy now</a>
                                         <a class="btn hvr-hover " data-fancybox-close="" href="#">Add to cart</a>
                                         <a class="btn hvr-hover float-end" style="margin-left: 5px;" href="#" ><i class="fab fa-facebook " aria-hidden="true" ></i></a>
                                         <a class="btn hvr-hover float-end" style="margin-left: 5px;" href="#"><i class="fab fa-google-plus " aria-hidden="true"></i></a>
@@ -40,7 +39,6 @@
                                         <a class="btn hvr-hover float-end" style="margin-left: 5px;" href="#"><i class="fab fa-whatsapp " aria-hidden="true"></i></a>
                                     </div>
                                 </div>
-
                     </div>
                 </div>
             </div>
