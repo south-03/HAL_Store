@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +43,8 @@ Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index
 Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
 Route::get('/collections/{category_name}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
 Route::get('/collections/{category_name}/{product_name}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
+Route::get('product-list', [FrontendController::class, 'productListAjax']);
+Route::post('searchproduct', [FrontendController::class, 'searchproduct']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -78,7 +80,3 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function ()
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::middleware(['auth'])->group(function (){
-    Route::post('add-to-cart', [App\Http\Controllers\Frontend\CartController::class, 'addProduct']);
-});

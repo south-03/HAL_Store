@@ -7,12 +7,9 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public $products, $category, $brandInputs = [], $priceInput;
+    public $products, $category, $brandInputs = [];
 
-    protected $queryString = [
-        'brandInputs' => ['except' =>'', 'as' => 'brand'],
-        'priceInput' => ['except' =>'', 'as' => 'price'],
-    ];
+    protected $queryString = ['brandInputs'];
 
     public function mount($category)
     {
@@ -25,18 +22,8 @@ class Index extends Component
         $this->products = Product::where('category_id', $this->category->id)
                                     ->when($this->brandInputs, function ($q)
                                     {
-                                        $q->whereIn('producerid', $this->brandInputs);
-                                    })
-                                    ->when($this->priceInput, function($q){
-                                       $q ->when($this->priceInput == 'high-to-low', function ($q2)
-                                            {
-                                                $q2->orderBy('price','DESC');
-                                            }) 
-                                            ->when($this->priceInput == 'low-to-high', function ($q2)
-                                            {
-                                                $q2->orderBy('price','ASC');
-                                            }); 
-                                    })                                     
+                                        $q->whereIn('brand', $this->brandInputs);
+                                    })                            
                                     ->get();
         return view('livewire.frontend.product.index', [
             'products' => $this->products,

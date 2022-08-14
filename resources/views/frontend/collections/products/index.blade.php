@@ -30,6 +30,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url('../libs/css/custom.css')}}">
 
+    {{-- Jquery --}}
+    <link rel="stylesheet" href="{{ url('//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css') }}">
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -212,7 +215,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Shop</h2>
-                    <ul class="breadcrumb" style="padding: 13px;">
+                    <ul class="breadcrumb" style="padding: 13px">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active"></li>
 
@@ -287,7 +290,8 @@
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-    <script src="{{asset('../libs/js/jquery-3.2.1.min.js')}}"></script>
+    {{-- <script src="{{asset('../libs/js/jquery-3.2.1.min.js')}}"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
@@ -304,6 +308,30 @@
     <script src="{{asset('../libs/js/contact-form-script.js')}}"></script>
     <script src="{{url('https://kit.fontawesome.com/e275822d82.js')}}" crossorigin="anonymous"></script>
     <script src="{{asset('../libs/js/custom.js')}}"></script>
+
+    {{-- Jquery --}}
+    <script src="{{ url('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js') }}"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+
+        var availableTags = [];
+        $.ajax({
+            method: "GET",
+            url: "/product-list",
+            success: function (response) {
+                // console.log(response);
+                startAutoComplete(response)
+            }
+        });
+
+        function startAutoComplete(availableTags) {
+            $( "#search-product" ).autocomplete({
+            source: availableTags
+            });
+        }
+        
+
+        </script>
 </body>
 
 </html>

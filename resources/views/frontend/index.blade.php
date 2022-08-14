@@ -118,10 +118,6 @@
                                     </a>
     
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" style="color: black; margin: 5px 0px" href="{{ url('/home') }}">Home
-                                        </a>
-                                           
-                                        
                                         <a class="dropdown-item" style="color: black" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -287,23 +283,22 @@
 
             <div class="row special-list">
 
-
-                    <div class="col-sm-4 col-xs-12 special-grid padding-none col-fix20">
-                        <div class="products-single fix">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
+                <div class="col-sm-4 col-xs-12 special-grid padding-none col-fix20">
+                    <div class="products-single fix">
+                        <div class="type-lb">
+                            <p class="sale">Sale</p>
+                        </div>
+                        <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                        <div class="why-text">
+                            <div class="card-body">
+                                <h4>amet</h4>
+                                <h5> $7.79</h5>
+                                <a class="cart btn btn-block btn-danger mt-2" href="#">Add to Cart</a>
                             </div>
-                            <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
-                            <div class="why-text">
-                                <div class="card-body">
-                                    <h4></h4>
-                                    <h5> $7.79</h5>
-                                    <a class="cart btn btn-block btn-danger mt-2" href="#">Add to Cart</a>
-                                </div>
 
-                            </div>
                         </div>
                     </div>
+                </div>
 
                 <div class="col-sm-4 col-xs-12 special-grid padding-none col-fix20">
                     <div class="products-single fix">
@@ -389,6 +384,96 @@
         </div>
     </div>
     <!-- End Products  -->
+
+
+
+    <!-- Start Instagram Feed  -->
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-01.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-02.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-03.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-04.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-05.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-06.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-07.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-08.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-09.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src="images/instagram-img-05.jpg" alt="" />
+                    <div class="hov-in">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+
 
     <!-- Start Footer  -->
     <footer>

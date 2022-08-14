@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <!-- Basic -->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +20,7 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{{ url('https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- Site CSS -->
@@ -119,10 +118,6 @@
                                     </a>
     
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" style="color: black; margin: 5px 0px" href="{{ url('/home') }}">Home
-                                        </a>
-                                           
-                                        
                                         <a class="dropdown-item" style="color: black" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -155,14 +150,14 @@
                         aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="{{url('')}}"><img src="{{ asset('images/logo.png') }}" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="{{url('')}}"><img src="{{ url('images/logo.png') }}" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="{{url('')}}">Home</a></li>
+                        <li class="nav-item "><a class="nav-link" href="{{url('')}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('about')}}">About Us</a></li>
                         <li class="dropdown megamenu-fw">
                             <a href="{{url('collections')}}" class="nav-link dropdown-toggle">Product</a>
@@ -191,11 +186,30 @@
     </div>
     <!-- End Top Search -->
 
+    <!-- Start All Title Box -->
+    <div class="all-title-box" style="background: url('{{'../../images/all-bg-title.jpg'}}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>ABOUT US</h2>
+                    <ul class="breadcrumb" style="padding: 13px">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Detail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
     <!-- Start Shop Detail  -->
         <div>
-            <livewire:frontend.product.view :category="$category" :product="$product" />
+            <livewire:frontend.product.view :category="$category" :product="$product"/>
         </div>
     <!-- End Cart -->
+
+    
+
 
     <!-- Start Footer  -->
     <footer>
@@ -204,11 +218,9 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
-                            <h4>HAL Store</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
+                            <h4>About ThewayShop</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
@@ -238,16 +250,13 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston
-                                        Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705
-                                            770</a></p>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a
-                                            href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>
@@ -267,54 +276,24 @@
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-    <script src="{{asset('../libs/js/jquery-3.2.1.min.js')}}"></script>
+    <!-- ALL JS FILES -->
+    <script src="{{url('libs/js/jquery-3.2.1.min.js')}}"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <!-- ALL PLUGINS -->
-    <script src="{{asset('../libs/js/jquery.superslides.min.js')}}"></script>
-    <script src="{{asset('../libs/js/bootstrap-select.js')}}"></script>
-    <script src="{{asset('../libs/js/inewsticker.js')}}"></script>
-    <script src="{{asset('../libs/js/bootsnav.js.')}}"></script>
-    <script src="{{asset('../libs/js/images-loded.min.js')}}"></script>
-    <script src="{{asset('../libs/js/isotope.min.js')}}"></script>
-    <script src="{{asset('../libs/js/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('../libs/js/baguetteBox.min.js')}}"></script>
-    <script src="{{asset('../libs/js/form-validator.min.js')}}"></script>
-    <script src="{{asset('../libs/js/contact-form-script.js')}}"></script>
+    <script src="{{url('libs/js/jquery.superslides.min.js')}}"></script>
+    <script src="{{url('libs/js/bootstrap-select.js')}}"></script>
+    <script src="{{url('libs/js/inewsticker.js')}}"></script>
+    <script src="{{url('libs/js/bootsnav.js.')}}"></script>
+    <script src="{{url('libs/js/images-loded.min.js')}}"></script>
+    <script src="{{url('libs/js/isotope.min.js')}}"></script>
+    <script src="{{url('libs/js/owl.carousel.min.js')}}"></script>
+    <script src="{{url('libs/js/baguetteBox.min.js')}}"></script>
+    <script src="{{url('libs/js/form-validator.min.js')}}"></script>
+    <script src="{{url('libs/js/contact-form-script.js')}}"></script>
     <script src="{{url('https://kit.fontawesome.com/e275822d82.js')}}" crossorigin="anonymous"></script>
-    <script src="{{asset('../libs/js/custom.js')}}"></script>
-    <script src="{{ url('https://code.jquery.com/jquery-3.6.0.min.js') }}"></script>
-
-
-    <script>
-        $(document).ready(function(){
-            $('.addtoCartBtn').click(function(e) {
-                e.preventDefault();
-
-                var product_id = $(this).closest('.product_data').find('.pro_id').val();
-                var product_qty = $(this).closest('.product_data').find('.qty-input').val();
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"] ').attr('content')
-                    }
-                });     
-
-                $.ajax({
-                    method: "POST",
-                    url: "/add-to-cart",
-                    data:{
-                        "product_id": product_id,
-                        "product_qty" :product_qty,
-                    },
-                    success: function (response) {
-                        swal(response.status);
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="{{url('libs/js/custom.js')}}"></script>
 </body>
 
 </html>
