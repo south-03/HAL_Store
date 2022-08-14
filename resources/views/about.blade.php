@@ -141,7 +141,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{url('')}}">Home</a></li>
                         <li class="nav-item active"><a class="nav-link" href="{{url('about')}}">About Us</a></li>
                         <li class="dropdown megamenu-fw">
-                            <a href="{{url('shop')}}" class="nav-link dropdown-toggle">Product</a>
+                            <a href="{{url('collections')}}" class="nav-link dropdown-toggle">Product</a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{url('service')}}">Service</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('contactUs')}}">Contact Us</a></li>

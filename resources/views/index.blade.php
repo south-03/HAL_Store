@@ -126,7 +126,7 @@
                         <li class="nav-item active"><a class="nav-link" href="{{url('')}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('about')}}">About Us</a></li>
                         <li class="dropdown megamenu-fw">
-                            <a href="{{url('shop')}}" class="nav-link dropdown-toggle">Product</a>
+                            <a href="{{url('collections')}}" class="nav-link dropdown-toggle">Product</a>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="{{url('service')}}">Service</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url('contactUs')}}">Contact Us</a></li>
@@ -199,34 +199,34 @@
                     <div class="shop-cat-box">
                         <img class="img-fluid" style="width: 352px; height: 352px;" src="images/t-shirts-img.jpg"
                             alt="" />
-                        <a class="btn hvr-hover" href="{{url('shop')}}">Laptop</a>
+                        <a class="btn hvr-hover" href="{{url('collections')}}">Laptop</a>
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" style="width: 352px; height: 352px;" src="images/shirt-img.jpg" alt="" />
-                        <a class="btn hvr-hover" href="{{url('shop')}}">PC</a>
+                        <a class="btn hvr-hover" href="{{url('collections')}}">PC</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" style="width: 352px; height: 352px;" src="images/wallet-img.jpg"
                             alt="" />
-                        <a class="btn hvr-hover" href="{{url('shop')}}">Monitor</a>
+                        <a class="btn hvr-hover" href="{{url('collections')}}">Monitor</a>
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" style="width: 352px; height: 352px;" src="images/women-bag-img.jpg"
                             alt="" />
-                        <a class="btn hvr-hover " href="{{url('shop')}}">Gear</a>
+                        <a class="btn hvr-hover " href="{{url('collections')}}">Gear</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" style="width: 352px; height: 352px;" src="images/shoes-img.jpg" alt="" />
-                        <a class="btn hvr-hover" href="{{url('shop')}}">Apple</a>
+                        <a class="btn hvr-hover" href="{{url('collections')}}">Apple</a>
                     </div>
                     <div class="shop-cat-box">
                         <img class="img-fluid" style="width: 352px; height: 352px;" src="images/women-shoes-img.jpg"
                             alt="" />
-                        <a class="btn hvr-hover" href="{{url('shop')}}">Chair</a>
+                        <a class="btn hvr-hover" href="{{url('collections')}}">Chair</a>
                     </div>
                 </div>
             </div>
