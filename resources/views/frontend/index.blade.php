@@ -268,17 +268,6 @@
     </div>
     <!-- End Categories -->
 
-    <!-- Start Products  -->
-    \
-    <!-- End Products  -->
-
-
-
-    <!-- Start Instagram Feed  -->
-    
-    <!-- End Instagram Feed  -->
-
-
     <!-- Start Footer  -->
     <footer>
         <div class="footer-main">
@@ -329,7 +318,7 @@
                                 </li>
                                 <li>
                                     <p><i class="fas fa-envelope"></i>Email: <a
-                                            href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                        href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>
