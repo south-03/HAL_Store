@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\Frontend\FrontendController;
@@ -82,9 +83,12 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function ()
     });
 });
 
-
+    Route::controller(App\Http\Controllers\HomeController::class)->group(function () { 
+        Route::get('/home', 'index');
+        Route::get('/home/{id}/edit', 'edit');
+        Route::put('/home/{id}', 'update');
+    });
     
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
