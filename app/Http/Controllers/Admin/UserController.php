@@ -39,6 +39,13 @@ class UserController extends Controller
             return redirect('admin/users')->with('message', 'No such user ID found');
         }
     }
+
+    public function delete($id)
+    {
+        $product = User::findOrFail($id);
+        $product->delete();
+        return redirect()->back()->with('message' , 'Product Deleted with all its image');
+    }
 }
 
 

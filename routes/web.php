@@ -80,6 +80,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function ()
         Route::get('/users', 'index');
         Route::get('/users/{id}/edit', 'edit');
         Route::put('/users/{id}', 'update');
+        Route::get('/users/{id}/delete', 'delete');
     });
 });
 

@@ -38,14 +38,12 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <th>Name</th>
-                        <th>Origin</th>
                         <th>Action</th>
                     </thead>
                     <tbody>
                         @foreach ($categories as $category)
                             <tr>
                                 <td>{{ $category -> name }}</td>
-                                <td>{{ $category -> origin }}</td>
                                 <td>
                                     <a href="{{ url('admin/category/'.$category -> id.'/edit') }}" class="btn btn-success">Edit</a>
                                     <a href="#" wire:click="deleteCategory({{ $category -> id }})" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
