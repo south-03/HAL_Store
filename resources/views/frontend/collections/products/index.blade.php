@@ -89,34 +89,51 @@
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> +11 900 800 100</a></p>
                     </div>
-                    @if (Route::has('login'))
-                        <div class="hidden">
-                            @auth
-                                <div class="our-link">
-                                    <ul>
-                                        {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}}
-                                        <li><a href="{{ url('/home') }}">{{ Auth::user()->name }}</a></li>
-                                    </ul>
-                                </div>
-                            @else
-                                <div class="our-link">
-                                    <ul>
-                                        {{-- class="text-sm text-gray-700 dark:text-gray-500 underline" --}}
-                                        <li><a href="{{ route('login') }}" >Log in</a></li>
-                                    </ul>
-                                </div>
+                    @guest
+                            <div class="our-link">
+                                @if (Route::has('login'))
+                                <ul>
+                                    <li>
+                                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            @endif
 
-                                @if (Route::has('register'))
-                                    <div class="our-link">
-                                        <ul>
-                                            {{-- class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline" --}}
-                                            <li><a href="{{ route('register') }}" >Register</a></li>
-                                        </ul>
+                            @if (Route::has('register'))
+                            <div class="our-link">
+                                <ul>
+                                    <li>
+                                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            @endif
+                            </div>
+                        @else
+                        <div class="our-link">
+                            <ul>
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+    
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" style="color: black" href="{{ url('/admin/dashboard') }}" >Dashboard</a>
+                                        <a class="dropdown-item" style="color: black" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+    
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
                                     </div>
-                                @endif
-                            @endauth
+                                </li>
+                            </ul>
                         </div>
-                    @endif
+                        @endguest
                 </div>
             </div>
         </div>

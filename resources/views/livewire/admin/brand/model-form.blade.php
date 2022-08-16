@@ -12,8 +12,36 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label>Brand Name</label>
-                            <input type="text" wire:model.defer="name" class="form-control" pattern="[a-z]">
+                            <input type="text" wire:model.defer="name" class="form-control" >
                             @error('name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label>Phone number</label>
+                            <input type="text" wire:model.defer="phone" class="form-control" >
+                            @error('phone')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label>Fax</label>
+                            <input type="text" wire:model.defer="fax" class="form-control" >
+                            @error('fax')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label>Address</label>
+                            <input type="text" wire:model.defer="address" class="form-control" >
+                            @error('address')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label>Email</label>
+                            <input type="text" wire:model.defer="email" class="form-control" >
+                            @error('email')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -44,20 +72,41 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label>Brand Name</label>
-                        <input type="text" wire:model.defer="name" class="form-control">
+                        <input type="text" wire:model.defer="name" class="form-control" >
                         @error('name')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
-
                     <div class="mb-3">
-                        <label>Brand Origin</label>
-                        <input type="text" wire:model.defer="origin" class="form-control">
-                        @error('origin')
+                        <label>Phone number</label>
+                        <input type="text" wire:model.defer="phone" class="form-control" >
+                        @error('phone')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label>Fax</label>
+                        <input type="text" wire:model.defer="fax" class="form-control" >
+                        @error('fax')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label>Address</label>
+                        <input type="text" wire:model.defer="address" class="form-control" >
+                        @error('address')
+                            <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="text" wire:model.defer="email" class="form-control" >
+                        @error('email')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                 </div>
+                
                 <div class="modal-footer">
                     <button type="button" wire:click="closeModal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Update</button>

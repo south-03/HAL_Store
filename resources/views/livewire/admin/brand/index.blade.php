@@ -15,7 +15,10 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Origin</th>
+                                <th>Phone</th>
+                                <th>Fax</th>
+                                <th>Address</th>
+                                <th>Email</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -23,6 +26,10 @@
                             @forelse ( $brands as $brand )
                             <tr>
                                 <td>{{ $brand->name }}</td>
+                                <td>{{ $brand->phone }}</td>
+                                <td>{{ $brand->fax }}</td>
+                                <td>{{ $brand->address }}</td>
+                                <td>{{ $brand->email }}</td>
                                 <td>
                                     <a href="#" wire:click="editBrand({{ $brand->id }})" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#updateBrandModal">Edit</a>
                                     <a href="#" wire:click="deleteBrand({{ $brand->id }})" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteBrandModal">Delete</a>

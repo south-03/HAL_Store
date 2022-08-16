@@ -10,20 +10,26 @@ class Index extends Component
 {
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
-    public $name, $origin, $brand_id;
+    public $name,$phone, $fax, $address, $email, $brand_id;
 
     public function rules()
     {
         return[
             'name' => 'required|string',
-            'origin' => 'required|string',
+            'phone' => 'required|string',
+            'fax' => 'required|string',
+            'address' => 'required|string',
+            'email' => 'required|string',
         ];
     }
 
     public function resetInput()
     {
         $this->name = NULL;
-        $this->origin = NULL;
+        $this->phone = NULL;
+        $this->fax = NULL;
+        $this->address = NULL;
+        $this->email = NULL;
         $this->brand_id = NULL;
     }
 
@@ -32,7 +38,10 @@ class Index extends Component
         $validatedData = $this->validate();
         Brand::create([
             'name' => $this->name,
-            'origin' => $this->origin,
+            'phone' => $this->phone,
+            'fax' => $this->fax,
+            'address' => $this->address,
+            'email' => $this->email,
         ]);
 
         session()->flash('message', 'Brand Added Successfully');
