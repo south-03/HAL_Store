@@ -75,7 +75,15 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function ()
 
     Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
 
+    Route::controller(App\Http\Controllers\Admin\UserController::class)->group(function () { 
+        Route::get('/users', 'index');
+        Route::get('/users/{id}/edit', 'edit');
+        Route::put('/users/{id}', 'update');
+    });
 });
+
+
+    
 
 Auth::routes();
 

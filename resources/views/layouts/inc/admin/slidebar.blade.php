@@ -38,5 +38,11 @@
         <span class="menu-title">Brands</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url('admin/users') }}">
+        <i class="mdi mdi-account menu-icon"></i>
+        <span class="menu-title">User</span>
+      </a>
+    </li>
   </ul>
 </nav>

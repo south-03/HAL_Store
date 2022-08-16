@@ -248,8 +248,7 @@
                             <h5>No Categories Available</h5>
                         </div>
                     @endforelse
-                    
-
+                
                 </div>
             </div>
         </div>
